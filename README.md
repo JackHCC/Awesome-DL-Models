@@ -2,7 +2,26 @@
 
 🤩Learning and reproducing classic deep learning models by using PyTorch.
 
+🛠This repository is not a library, it's just some learning resource about catching the tricks of calssical models. You can get some details you need here. 
 
+## Machine Learning Model
+
+### Statistical Learning Method
+
+#### Supervised Learning
+📗 [Lesson Note](https://blog.creativecc.cn/posts/Lesson-Statistical-Learning-Method.html) 👈 
+
+- [Perception](./Models/Statistical-Learning-Method/perception.py)
+- KNN
+- Decision Tree
+- Logistic Regression
+- Support Vector Machine
+- Adaboost
+- EM
+- Hidden Markov
+- Conditional Random Field
+
+#### Unsupervised Learning
 
 ## Computer Vision
 
@@ -56,7 +75,7 @@
 
 #### Transformer
 
-- [Base_Transformer](./Models/Transformer/base_transformer.py) : [Docx](./Docx/Transformer/base_transformer.md)
+- [Base_Transformer](./Models/Transformer/base_transformer.py) : [Docx ](./Docx/Transformer/base_transformer.md) : [Colab](https://colab.research.google.com/drive/1avycotLAFcgXUP1qTk0bSX_jVGhjtZaV?usp=sharing)
 - Bert系列
 - GTP系列
 - XLNet

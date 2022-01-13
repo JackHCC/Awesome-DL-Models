@@ -71,7 +71,7 @@ n_heads = 8     # Multi-Head Attention设置为8  d_k * n_heads = d_model
 
 sentences 里一共有三个训练数据，中文->英文。把Encoder_input、Decoder_input、Decoder_output转换成字典索引，例如"学"->3、"student"->6。再把数据转换成batch大小为2的分组数据，3句话一共可以分成两组，一组2句话、一组1句话。src_len表示中文句子固定最大长度，tgt_len 表示英文句子固定最大长度。
 
-## **2. **定义位置信息
+## 2. 定义位置信息
 
 ```python
 # Positional Embedding
@@ -374,7 +374,7 @@ print([src_idx2word[int(i)] for i in enc_inputs[0]], '->',
 
 - Encoder与Decoder连接的attention，Encoder提供k和v，Decoder提供q
 
-- Decoder的Multi-Head Self-Attention带Mask，Mask在矩阵计算中相当于实现一个上三角矩阵
+- Decoder的Multi-Head Self-Attention带Mask，Mask在矩阵计算中相当于实现一个上三角矩阵，带Mask是为了并行训练计算，实际测试是依次一个个输入。
 
 - Positional Embedding与Token Embedding相加的操作细节
 
