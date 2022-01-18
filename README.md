@@ -12,7 +12,7 @@
 📗 [Lesson Note](https://blog.creativecc.cn/posts/Lesson-Statistical-Learning-Method.html) 👈 
 
 - [Perception](./Models/Statistical-Learning-Method/perception.py)
-- KNN
+- [KNN](./Models/Statistical-Learning-Method/knn.py)
 - Decision Tree
 - Logistic Regression
 - Support Vector Machine

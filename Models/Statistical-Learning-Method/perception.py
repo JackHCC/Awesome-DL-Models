@@ -51,6 +51,11 @@ class Perception:
         return weight, bias
 
     def fit(self, param_init_method="random"):
+        """
+        Train the model
+        :param param_init_method: random or zero
+        :return: parameters of model
+        """
         weight, bias = self.param_init(method=param_init_method)
 
         epoch = 0   # Train epoch
@@ -109,6 +114,11 @@ class DisplayModel:
         plt.show()
 
     def plot(self, weight, bias, epoch):
+        """
+        :param weight: array
+        :param bias: array
+        :param epoch: integer
+        """
         plt.cla()
         # Here we assume that X has two characteristics
         plt.xlim(0, np.max(self.X.T[0]) + 1)
