@@ -30,8 +30,8 @@
 - LeNet
 - AlexNet
 - VGGNet
-- Inception系列v1-v4
-- ResNet系列
+- Inception Series v1-v4
+- ResNet Series
 - SENet
 - DenseNet
 
@@ -42,7 +42,7 @@
 - R-CNN
 - Fast R-CNN
 - R-FCN
-- YOLO系列
+- YOLO Series
 - SSD
 - FPN
 
@@ -50,7 +50,7 @@
 
 ### Semantic Segmentation
 
-- U-Net系列
+- U-Net Series
 
 
 
@@ -61,6 +61,10 @@
 
 
 ## Natural Language Processing
+
+### Lesson
+- [CS224N: Natural Language Processing](./Docx/CS224N)
+
 
 ### Embedding
 
