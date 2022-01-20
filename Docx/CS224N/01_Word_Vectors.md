@@ -35,5 +35,4 @@ Idea:
 ## Link
 
 - [Word2Vec Note](https://cs224d.stanford.edu/lecture_notes/notes1.pdf)
-- Gensim
 

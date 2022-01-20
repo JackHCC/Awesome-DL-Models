@@ -63,7 +63,7 @@
 ## Natural Language Processing
 
 ### Lesson
-- [CS224N: Natural Language Processing](./Docx/CS224N)
+- [CS224N: Natural Language Processing](./Docx/CS224N): 👈 Note, Assignment, Code and Papers here.
 
 
 ### Embedding

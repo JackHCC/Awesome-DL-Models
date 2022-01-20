@@ -8,12 +8,14 @@ Course notes and code: including formula derivation, course knowledge summary, h
   * [Distributed Representations of Words and Phrases and their Compositionality](http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf) (negative sampling paper)
 - [Word Vectors 2 and Word Window Classification](02_Word_Vectors_2.md)
   - [GloVe: Global Vectors for Word Representation](http://nlp.stanford.edu/pubs/glove.pdf) (original GloVe paper)
+    - [Official Code](https://nlp.stanford.edu/projects/glove/)
   - [Improving Distributional Similarity with Lessons Learned from Word Embeddings](http://www.aclweb.org/anthology/Q15-1016)
   - [Evaluation methods for unsupervised word embeddings](http://www.aclweb.org/anthology/D15-1036)
   - [A Latent Variable Model Approach to PMI-based Word Embeddings](http://aclweb.org/anthology/Q16-1028)
   - [Linear Algebraic Structure of Word Senses, with Applications to Polysemy](https://transacl.org/ojs/index.php/tacl/article/viewFile/1346/320)
   - [On the Dimensionality of Word Embedding](https://papers.nips.cc/paper/7368-on-the-dimensionality-of-word-embedding.pdf)
-
+  - **Word Vectors Appendix**: [VSM](https://blog.csdn.net/weixin_42398658/article/details/85063004)，[LSA](https://zhuanlan.zhihu.com/p/144367432)，[PMI](https://blog.csdn.net/cj151525/article/details/112804799#:~:text=PMI%20%EF%BC%88%20Pointwise%20Mutual%20Information%20%EF%BC%89%20%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE%E9%87%8C%E9%9D%A2%EF%BC%8C%E7%BB%8F%E5%B8%B8%E4%BC%9A%E7%94%A8%E5%88%B0%20PMI,%28x%2Cy%29p%20%28x%29p%20%28y%29%3Dlogp%20%28x%7Cy%29p%20%28x%29%3Dlogp%20%28y%7Cx%29p%20%28y%29%20%E5%9C%A8%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%AD%EF%BC%8C%E6%88%91%E4%BB%AC%E7%9F%A5%E9%81%93%EF%BC%8C%E5%A6%82)，[N-garm](https://zhuanlan.zhihu.com/p/32829048)，[NNLM](https://blog.csdn.net/lilong117194/article/details/82018008)，[RNNLM](https://blog.csdn.net/rongsenmeng2835/article/details/108656674)，[SVD](https://zhuanlan.zhihu.com/p/29846048)
+  
 - Backprop and Neural Networks
   - [matrix calculus notes](https://web.stanford.edu/class/cs224n/readings/gradient-notes.pdf)
   - [Review of differential calculus](https://web.stanford.edu/class/cs224n/readings/review-differential-calculus.pdf)
