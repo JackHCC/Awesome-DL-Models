@@ -108,9 +108,16 @@ Course notes and code: including formula derivation, course knowledge summary, h
 - Future of NLP + Deep Learning
 
 ## Tutorial
+
+### Code
+
 - [Python](./Tutorial/cs224n-python-review-code-updated.ipynb)
 - [PyTorch](./Tutorial/CS224N_PyTorch_Tutorial.ipynb)
 - [Gensim](./Tutorial/Gensim%20word%20vector%20visualization.ipynb)
+
+### Theory
+
+- [Singular Value Decomposition](https://davetang.org/file/Singular_Value_Decomposition_Tutorial.pdf) 
 
 
 ## Assignment
