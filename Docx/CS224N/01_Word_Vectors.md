@@ -26,7 +26,9 @@ Idea:
 
 ##  Word2vec derivations of gradient
 
-- Word2Vec损失函数与梯度下降推导：
+### Task：
+
+- 手推Word2Vec损失函数与梯度下降：
 
 ![](../../Images/CS224N/image-20220119162640146.png)
 
