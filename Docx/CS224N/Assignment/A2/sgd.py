@@ -9,6 +9,7 @@ import random
 import numpy as np
 import os.path as op
 
+
 def load_saved_params():
     """
     A helper function that loads previously saved parameters and resets
@@ -86,6 +87,11 @@ def sgd(f, x0, step, iterations, postprocessing=None, useSaved=False,
 
         loss = None
         ### YOUR CODE HERE (~2 lines)
+        # Calculate loss and gradients
+        loss, grad = f(x)
+
+        # Take step in direction of gradient.
+        x -= step * grad
 
         ### END YOUR CODE
 

@@ -6,8 +6,9 @@ import numpy as np
 import os
 import random
 
+
 class StanfordSentiment:
-    def __init__(self, path=None, tablesize = 1000000):
+    def __init__(self, path=None, tablesize=1000000):
         if not path:
             path = "utils/datasets/stanfordSentimentTreebank"
 
@@ -83,8 +84,8 @@ class StanfordSentiment:
         rejectProb = self.rejectProb()
         tokens = self.tokens()
         allsentences = [[w for w in s
-            if 0 >= rejectProb[tokens[w]] or random.random() >= rejectProb[tokens[w]]]
-            for s in sentences * 30]
+                         if 0 >= rejectProb[tokens[w]] or random.random() >= rejectProb[tokens[w]]]
+                        for s in sentences * 30]
 
         allsentences = [s for s in allsentences if len(s) > 1]
 
@@ -99,8 +100,8 @@ class StanfordSentiment:
         wordID = random.randint(0, len(sent) - 1)
 
         context = sent[max(0, wordID - C):wordID]
-        if wordID+1 < len(sent):
-            context += sent[wordID+1:min(len(sent), wordID + C + 1)]
+        if wordID + 1 < len(sent):
+            context += sent[wordID + 1:min(len(sent), wordID + C + 1)]
 
         centerword = sent[wordID]
         context = [w for w in context if w != centerword]

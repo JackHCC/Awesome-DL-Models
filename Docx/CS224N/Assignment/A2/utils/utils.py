@@ -2,6 +2,7 @@
 
 import numpy as np
 
+
 def normalizeRows(x):
     """ Row normalization function
 
@@ -9,8 +10,9 @@ def normalizeRows(x):
     unit length.
     """
     N = x.shape[0]
-    x /= np.sqrt(np.sum(x**2, axis=1)).reshape((N,1)) + 1e-30
+    x /= np.sqrt(np.sum(x ** 2, axis=1)).reshape((N, 1)) + 1e-30
     return x
+
 
 def softmax(x):
     """Compute the softmax function for each row of the input x.

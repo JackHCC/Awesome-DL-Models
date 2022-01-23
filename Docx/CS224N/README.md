@@ -119,7 +119,7 @@ Lesson Link：[CS224N Schedule](https://web.stanford.edu/class/cs224n/index.html
 ## Assignment
 
 - [Assignment 1](./Assignment/A1/exploring_word_vectors.ipynb)
-- [Assignment 2](./Assignment/A2/a2.pdf)
+- [Assignment 2](./Assignment/A2)
 - [Assignment 3](./Assignment/A3/a3.pdf)
 - [Assignment 4](./Assignment/A4/a4.pdf)
 - [Assignment 5](./Assignment/A5/a5.pdf)

@@ -65,6 +65,9 @@
 ### Lesson
 - [CS224N: Natural Language Processing](./Docx/CS224N): 👈 Note, Assignment, Code and Papers here.
 
+### Packet
+- [NLTK](https://www.nltk.org/)
+- [Gensim](https://radimrehurek.com/gensim/intro.html)
 
 ### Embedding
 
