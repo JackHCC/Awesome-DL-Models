@@ -16,7 +16,7 @@ Lesson Link：[CS224N Schedule](https://web.stanford.edu/class/cs224n/index.html
   - [A Latent Variable Model Approach to PMI-based Word Embeddings](http://aclweb.org/anthology/Q16-1028)
   - [Linear Algebraic Structure of Word Senses, with Applications to Polysemy](https://transacl.org/ojs/index.php/tacl/article/viewFile/1346/320)
   - [On the Dimensionality of Word Embedding](https://papers.nips.cc/paper/7368-on-the-dimensionality-of-word-embedding.pdf)
-  - **Word Vectors Appendix**: [VSM](https://blog.csdn.net/weixin_42398658/article/details/85063004)，[LSA](https://zhuanlan.zhihu.com/p/144367432)，[PMI](https://blog.csdn.net/cj151525/article/details/112804799#:~:text=PMI%20%EF%BC%88%20Pointwise%20Mutual%20Information%20%EF%BC%89%20%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE%E9%87%8C%E9%9D%A2%EF%BC%8C%E7%BB%8F%E5%B8%B8%E4%BC%9A%E7%94%A8%E5%88%B0%20PMI,%28x%2Cy%29p%20%28x%29p%20%28y%29%3Dlogp%20%28x%7Cy%29p%20%28x%29%3Dlogp%20%28y%7Cx%29p%20%28y%29%20%E5%9C%A8%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%AD%EF%BC%8C%E6%88%91%E4%BB%AC%E7%9F%A5%E9%81%93%EF%BC%8C%E5%A6%82)，[N-garm](https://zhuanlan.zhihu.com/p/32829048)，[NNLM](https://blog.csdn.net/lilong117194/article/details/82018008)，[RNNLM](https://blog.csdn.net/rongsenmeng2835/article/details/108656674)，[SVD](https://zhuanlan.zhihu.com/p/29846048)
+  - **Appendix**: [VSM](https://blog.csdn.net/weixin_42398658/article/details/85063004)，[LSA](https://zhuanlan.zhihu.com/p/144367432)，[PMI](https://blog.csdn.net/cj151525/article/details/112804799#:~:text=PMI%20%EF%BC%88%20Pointwise%20Mutual%20Information%20%EF%BC%89%20%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3%E6%96%87%E7%8C%AE%E9%87%8C%E9%9D%A2%EF%BC%8C%E7%BB%8F%E5%B8%B8%E4%BC%9A%E7%94%A8%E5%88%B0%20PMI,%28x%2Cy%29p%20%28x%29p%20%28y%29%3Dlogp%20%28x%7Cy%29p%20%28x%29%3Dlogp%20%28y%7Cx%29p%20%28y%29%20%E5%9C%A8%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%AD%EF%BC%8C%E6%88%91%E4%BB%AC%E7%9F%A5%E9%81%93%EF%BC%8C%E5%A6%82)，[N-garm](https://zhuanlan.zhihu.com/p/32829048)，[NNLM](https://blog.csdn.net/lilong117194/article/details/82018008)，[RNNLM](https://blog.csdn.net/rongsenmeng2835/article/details/108656674)，[SVD](https://zhuanlan.zhihu.com/p/29846048)
   
 - [Backprop and Neural Networks](03_Backprop.md)
   - [Learning Representations by Backpropagating Errors](http://www.iro.umontreal.ca/~vincentp/ift3395/lectures/backprop_old.pdf) (seminal Rumelhart et al. backpropagation paper)
@@ -25,10 +25,12 @@ Lesson Link：[CS224N Schedule](https://web.stanford.edu/class/cs224n/index.html
 - [Dependency Parsing](04_Dependency_Parsing.md)
   - [Incrementality in Deterministic Dependency Parsing](https://www.aclweb.org/anthology/W/W04/W04-0308.pdf)
   - [A Fast and Accurate Dependency Parser using Neural Networks](https://www.emnlp2014.org/papers/pdf/EMNLP2014082.pdf)
-  - [Dependency Parsing](http://www.morganclaypool.com/doi/abs/10.2200/S00169ED1V01Y200901HLT002)
+    - [Unofficial Code](https://github.com/akjindal53244/dependency_parsing_tf)
+  - [Dependency Parsing](http://www.morganclaypool.com/doi/abs/10.2200/S00169ED1V01Y200901HLT002) (a book need to buy)
   - [Globally Normalized Transition-Based Neural Networks](https://arxiv.org/pdf/1603.06042.pdf)
   - [Universal Stanford Dependencies: A cross-linguistic typology](http://nlp.stanford.edu/~manning/papers/USD_LREC14_UD_revision.pdf)
-  - [Universal Dependencies website](http://universaldependencies.org/)
+  - **UD Standard**: [Universal Dependencies](http://universaldependencies.org/)
+  - **Appendix**: [t-SNE](https://zhuanlan.zhihu.com/p/148170862)，[Understand Stanford Universal Dependencies](https://www.cnblogs.com/brooksj/articles/14191888.html)，[Beam Search](https://zhuanlan.zhihu.com/p/82829880)，[All NLP Task Evaluation](https://my.oschina.net/u/4316091/blog/4270383)
 
 - Recurrent Neural Networks and Language Models
   - [N-gram Language Models](https://web.stanford.edu/~jurafsky/slp3/3.pdf) (textbook chapter)

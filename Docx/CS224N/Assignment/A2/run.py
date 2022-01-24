@@ -73,6 +73,4 @@ for i in range(len(visualizeWords)):
 
 plt.xlim((np.min(coord[:, 0]), np.max(coord[:, 0])))
 plt.ylim((np.min(coord[:, 1]), np.max(coord[:, 1])))
-
-plt.show()
 plt.savefig('word_vectors.png')
