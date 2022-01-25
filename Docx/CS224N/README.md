@@ -32,20 +32,15 @@ Lesson Link：[CS224N Schedule](https://web.stanford.edu/class/cs224n/index.html
   - **UD Standard**: [Universal Dependencies](http://universaldependencies.org/)
   - **Appendix**: [t-SNE](https://zhuanlan.zhihu.com/p/148170862)，[Understand Stanford Universal Dependencies](https://www.cnblogs.com/brooksj/articles/14191888.html)，[Beam Search](https://zhuanlan.zhihu.com/p/82829880)，[All NLP Task Evaluation](https://my.oschina.net/u/4316091/blog/4270383)
 
-- Recurrent Neural Networks and Language Models
+- [Recurrent Neural Networks and Language Models](05_Language_Models.md)
   - [N-gram Language Models](https://web.stanford.edu/~jurafsky/slp3/3.pdf) (textbook chapter)
-  - [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) (blog post overview)
   - [Sequence Modeling: Recurrent and Recursive Neural Nets](http://www.deeplearningbook.org/contents/rnn.html) (Sections 10.1 and 10.2)
-  - [On Chomsky and the Two Cultures of Statistical Learning](http://norvig.com/chomsky.html)
-
-- Vanishing Gradients, Fancy RNNs, Seq2Seq
-  - [Sequence Modeling: Recurrent and Recursive Neural Nets](http://www.deeplearningbook.org/contents/rnn.html) (Sections 10.3, 10.5, 10.7-10.12)
-  - [Learning long-term dependencies with gradient descent is difficult](http://ai.dinfo.unifi.it/paolo//ps/tnn-94-gradient.pdf) (one of the original vanishing gradient papers)
+  
+- [Vanishing Gradients, Fancy RNNs, Seq2Seq](06_Fancy_RNN.md)
+  - [Learning long-term dependencies with gradient descent is difficult](https://readpaper.com/pdf-annotate/note?noteId=645919043856969728&pdfId=4508884458182172673) (one of the original vanishing gradient papers)
   - [On the difficulty of training Recurrent Neural Networks](https://arxiv.org/pdf/1211.5063.pdf) (proof of vanishing gradient problem)
-  - [Vanishing Gradients Jupyter Notebook](https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1174/lectures/vanishing_grad_example.html) (demo for feedforward networks)
-  - [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/) (blog post overview)
-
-- Machine Translation, Attention, Subword Models
+  
+- [Machine Translation, Attention, Subword Models](07_Machine_Translation.md)
   - [Statistical Machine Translation slides, CS224n 2015](https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1162/syllabus.shtml) (lectures 2/3/4)
   - [Statistical Machine Translation](https://www.cambridge.org/core/books/statistical-machine-translation/94EADF9F680558E13BE759997553CDE5) (book by Philipp Koehn)
   - [BLEU](https://www.aclweb.org/anthology/P02-1040.pdf) (original paper)
