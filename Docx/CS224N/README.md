@@ -39,6 +39,7 @@ Lesson Link：[CS224N Schedule](https://web.stanford.edu/class/cs224n/index.html
 - [Vanishing Gradients, Fancy RNNs, Seq2Seq](06_Fancy_RNN.md)
   - [Learning long-term dependencies with gradient descent is difficult](https://readpaper.com/pdf-annotate/note?noteId=645919043856969728&pdfId=4508884458182172673) (one of the original vanishing gradient papers)
   - [On the difficulty of training Recurrent Neural Networks](https://arxiv.org/pdf/1211.5063.pdf) (proof of vanishing gradient problem)
+  - [**Vanishing Gradient Solutions**](https://analyticsindiamag.com/addressing-the-vanishing-gradient-problem-a-guide-for-beginners/): Multi-Level Hierarchy, Long Short-Term Memory(LSTM)/Residual Neural Network, Rectified Linear Unit (ReLU) Activation Function
   
 - [Machine Translation, Attention, Subword Models](07_Machine_Translation.md)
   - [Statistical Machine Translation slides, CS224n 2015](https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1162/syllabus.shtml) (lectures 2/3/4)
