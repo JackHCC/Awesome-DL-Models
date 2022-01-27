@@ -50,14 +50,14 @@ Lesson Link：[CS224N Schedule](https://web.stanford.edu/class/cs224n/index.html
   - [Achieving Open Vocabulary Neural Machine Translation with Hybrid Word-Character Models](https://arxiv.org/abs/1604.00788.pdf)
   - [Revisiting Character-Based Neural Machine Translation with Capacity and Compression](https://arxiv.org/pdf/1808.09943.pdf)
 
-- Final Projects: Custom and Default; Practical Tips
+- [Final Projects: Custom and Default; Practical Tips](08_Practical_Tips.md)
   - [Practical Methodology](https://www.deeplearningbook.org/contents/guidelines.html) (*Deep Learning* book chapter)
-  - [Model Pruning](https://papers.nips.cc/paper/2020/file/eae15aabaa768ae4a5993a8a4f4fa6e4-Paper.pdf)
-  - [Model Quantization](https://arxiv.org/pdf/2004.07320.pdf)
-  - [BabyAI](https://arxiv.org/pdf/2007.12770.pdf)
-  - [gSCAN](https://arxiv.org/pdf/2003.05161.pdf)
+  - [Model Pruning](https://papers.nips.cc/paper/2020/file/eae15aabaa768ae4a5993a8a4f4fa6e4-Paper.pdf) (Movement Pruning: Adaptive Sparsity by Fine-Tuning)
+  - [Model Quantization](https://arxiv.org/pdf/2004.07320.pdf) (TRAINING WITH QUANTIZATION NOISE FOR EXTREME MODEL COMPRESSION)
+  - [BabyAI](https://arxiv.org/pdf/2007.12770.pdf) (BabyAI 1.1)
+  - [gSCAN](https://arxiv.org/pdf/2003.05161.pdf) (A Benchmark for Systematic Generalization in rounded Language Understanding)
 
-- Transformers
+- [Transformers](09_Transformer.md)
   - [Project Handout (IID SQuAD track)](http://web.stanford.edu/class/cs224n/project/default-final-project-handout-squad-track.pdf)
   - [Project Handout (Robust QA track)](http://web.stanford.edu/class/cs224n/project/default-final-project-handout-robustqa-track.pdf)
   - [Attention Is All You Need](https://arxiv.org/abs/1706.03762.pdf)
@@ -66,7 +66,7 @@ Lesson Link：[CS224N Schedule](https://web.stanford.edu/class/cs224n/index.html
   - [Layer Normalization](https://arxiv.org/pdf/1607.06450.pdf)[Image Transformer](https://arxiv.org/pdf/1802.05751.pdf)
   - [Music Transformer: Generating music with long-term structure](https://arxiv.org/pdf/1809.04281.pdf)
 
-- More about Transformers and Pretraining
+- [More about Transformers and Pretraining](10_Pretraining.md)
   - [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/pdf/1810.04805.pdf)
   - [Contextual Word Representations: A Contextual Introduction](https://arxiv.org/abs/1902.06006.pdf)
   - [The Illustrated BERT, ELMo, and co.](http://jalammar.github.io/illustrated-bert/)
