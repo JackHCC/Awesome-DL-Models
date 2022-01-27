@@ -42,19 +42,20 @@ Lesson Link：[CS224N Schedule](https://web.stanford.edu/class/cs224n/index.html
   - [**Vanishing Gradient Solutions**](https://analyticsindiamag.com/addressing-the-vanishing-gradient-problem-a-guide-for-beginners/): Multi-Level Hierarchy, Long Short-Term Memory(LSTM)/Residual Neural Network, Rectified Linear Unit (ReLU) Activation Function
   
 - [Machine Translation, Attention, Subword Models](07_Machine_Translation.md)
-  - [Statistical Machine Translation slides, CS224n 2015](https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1162/syllabus.shtml) (lectures 2/3/4)
-  - [Statistical Machine Translation](https://www.cambridge.org/core/books/statistical-machine-translation/94EADF9F680558E13BE759997553CDE5) (book by Philipp Koehn)
   - [BLEU](https://www.aclweb.org/anthology/P02-1040.pdf) (original paper)
   - [Sequence to Sequence Learning with Neural Networks](https://arxiv.org/pdf/1409.3215.pdf) (original seq2seq NMT paper)
   - [Sequence Transduction with Recurrent Neural Networks](https://arxiv.org/pdf/1211.3711.pdf) (early seq2seq speech recognition paper)
   - [Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/pdf/1409.0473.pdf) (original seq2seq+attention paper)
-  - [Attention and Augmented Recurrent Neural Networks](https://distill.pub/2016/augmented-rnns/) (blog post overview)
   - [Massive Exploration of Neural Machine Translation Architectures](https://arxiv.org/pdf/1703.03906.pdf) (practical advice for hyperparameter choices)
   - [Achieving Open Vocabulary Neural Machine Translation with Hybrid Word-Character Models](https://arxiv.org/abs/1604.00788.pdf)
   - [Revisiting Character-Based Neural Machine Translation with Capacity and Compression](https://arxiv.org/pdf/1808.09943.pdf)
 
 - Final Projects: Custom and Default; Practical Tips
   - [Practical Methodology](https://www.deeplearningbook.org/contents/guidelines.html) (*Deep Learning* book chapter)
+  - [Model Pruning](https://papers.nips.cc/paper/2020/file/eae15aabaa768ae4a5993a8a4f4fa6e4-Paper.pdf)
+  - [Model Quantization](https://arxiv.org/pdf/2004.07320.pdf)
+  - [BabyAI](https://arxiv.org/pdf/2007.12770.pdf)
+  - [gSCAN](https://arxiv.org/pdf/2003.05161.pdf)
 
 - Transformers
   - [Project Handout (IID SQuAD track)](http://web.stanford.edu/class/cs224n/project/default-final-project-handout-squad-track.pdf)
