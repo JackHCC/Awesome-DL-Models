@@ -63,7 +63,7 @@
 ## Natural Language Processing
 
 ### Lesson
-- [CS224N: Natural Language Processing](./Docx/CS224N): 👈 Note, Assignment, Code and Papers here.
+- [CS224N: Natural Language Processing 2022](./Docx/CS224N): 👈 Note, Assignment, Code and Papers here.
 
 ### Packet
 - [NLTK](https://www.nltk.org/)

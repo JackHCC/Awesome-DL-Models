@@ -1,8 +1,10 @@
-# CS224 Natural Language Processing
+# CS224 Natural Language Processing 2022
 
 Course notes and code: including formula derivation, course knowledge summary, homework and model implementation code.
 
-Lesson Link：[CS224N Schedule](https://web.stanford.edu/class/cs224n/index.html#schedule) 👈 You Can get Slides from here.
+Lesson Link：[CS224N 2022 Schedule](https://web.stanford.edu/class/cs224n/index.html#schedule) 👈 You Can get Slides from here.
+
+Lesson Video: [Bilibili](https://www.bilibili.com/video/BV1uL41137jN) | [YouTube](https://www.youtube.com/watch?v=rmVRLeJRkl4&list=PLoROMvodv4rOSH4v6133s9LFPRHjEmbmJ&ab_channel=stanfordonline) 💡
 
 ## Lecture and Papers
 - [Word Vectors](01_Word_Vectors.md)
