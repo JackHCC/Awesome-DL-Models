@@ -193,22 +193,8 @@ Adds unanswerable question
 
 - [Note](https://web.stanford.edu/class/cs224n/readings/final-project-practical-tips.pdf)
 - [How to Build an Economic Model in Your Spare Time](https://people.ischool.berkeley.edu/~hal/Papers/how.pdf)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- [Project Handout (IID SQuAD track)](http://web.stanford.edu/class/cs224n/project/default-final-project-handout-squad-track.pdf)
+- [Project Handout (Robust QA track)](http://web.stanford.edu/class/cs224n/project/default-final-project-handout-robustqa-track.pdf)
 
 
 

@@ -58,20 +58,16 @@ Lesson Link：[CS224N Schedule](https://web.stanford.edu/class/cs224n/index.html
   - [gSCAN](https://arxiv.org/pdf/2003.05161.pdf) (A Benchmark for Systematic Generalization in rounded Language Understanding)
 
 - [Transformers](09_Transformer.md)
-  - [Project Handout (IID SQuAD track)](http://web.stanford.edu/class/cs224n/project/default-final-project-handout-squad-track.pdf)
-  - [Project Handout (Robust QA track)](http://web.stanford.edu/class/cs224n/project/default-final-project-handout-robustqa-track.pdf)
   - [Attention Is All You Need](https://arxiv.org/abs/1706.03762.pdf)
-  - [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
-  - [Transformer (Google AI blog post)](https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html)
-  - [Layer Normalization](https://arxiv.org/pdf/1607.06450.pdf)[Image Transformer](https://arxiv.org/pdf/1802.05751.pdf)
+  - [Layer Normalization](https://arxiv.org/pdf/1607.06450.pdf)
+  - [Image Transformer](https://arxiv.org/pdf/1802.05751.pdf)
   - [Music Transformer: Generating music with long-term structure](https://arxiv.org/pdf/1809.04281.pdf)
 
 - [More about Transformers and Pretraining](10_Pretraining.md)
   - [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/pdf/1810.04805.pdf)
   - [Contextual Word Representations: A Contextual Introduction](https://arxiv.org/abs/1902.06006.pdf)
-  - [The Illustrated BERT, ELMo, and co.](http://jalammar.github.io/illustrated-bert/)
 
-- Question Answering
+- [Question Answering](11_Question_Answering.md)
   - [SQuAD: 100,000+ Questions for Machine Comprehension of Text](https://arxiv.org/pdf/1606.05250.pdf)
   - [Bidirectional Attention Flow for Machine Comprehension](https://arxiv.org/pdf/1611.01603.pdf)
   - [Reading Wikipedia to Answer Open-Domain Questions](https://arxiv.org/pdf/1704.00051.pdf)
@@ -79,7 +75,7 @@ Lesson Link：[CS224N Schedule](https://web.stanford.edu/class/cs224n/index.html
   - [Dense Passage Retrieval for Open-Domain Question Answering](https://arxiv.org/pdf/2004.04906.pdf)
   - [Learning Dense Representations of Phrases at Scale](https://arxiv.org/pdf/2012.12624.pdf)
 
-- Natural Language Generation
+- [Natural Language Generation](12_Natural_Language_Generation.md)
   - [The Curious Case of Neural Text Degeneration](https://arxiv.org/abs/1904.09751.pdf)
   - [Get To The Point: Summarization with Pointer-Generator Networks](https://arxiv.org/abs/1704.04368.pdf)
   - [Hierarchical Neural Story Generation](https://arxiv.org/abs/1805.04833.pdf)

@@ -68,6 +68,8 @@
 ### Packet
 - [NLTK](https://www.nltk.org/)
 - [Gensim](https://radimrehurek.com/gensim/intro.html)
+- [SentencePiece](https://github.com/google/sentencepiece)
+- [sacreBLEU](https://github.com/mjpost/sacreBLEU)
 
 ### Embedding
 

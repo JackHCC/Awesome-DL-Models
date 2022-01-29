@@ -6,3 +6,8 @@ Docx/CS224N/Assignment/A3/data/
 Docx/CS224N/Assignment/A2/utils/datasets/
 Docx/CS224N/Assignment/A2/*.npy
 Docx/CS224N/Assignment/A2/*.pickle
+Docx/CS224N/Assignment/A4/*.model
+Docx/CS224N/Assignment/A4/*.vocab
+Docx/CS224N/Assignment/A4/vocab.json
+Docx/CS224N/Assignment/A4/model.bin
+Docx/CS224N/Assignment/A4/model.bin.optim
