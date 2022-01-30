@@ -54,10 +54,11 @@ Lesson Video: [Bilibili](https://www.bilibili.com/video/BV1uL41137jN) | [YouTube
 
 - [Final Projects: Custom and Default; Practical Tips](08_Practical_Tips.md)
   - [Practical Methodology](https://www.deeplearningbook.org/contents/guidelines.html) (*Deep Learning* book chapter)
-  - [Model Pruning](https://papers.nips.cc/paper/2020/file/eae15aabaa768ae4a5993a8a4f4fa6e4-Paper.pdf) (Movement Pruning: Adaptive Sparsity by Fine-Tuning)
-  - [Model Quantization](https://arxiv.org/pdf/2004.07320.pdf) (TRAINING WITH QUANTIZATION NOISE FOR EXTREME MODEL COMPRESSION)
-  - [BabyAI](https://arxiv.org/pdf/2007.12770.pdf) (BabyAI 1.1)
-  - [gSCAN](https://arxiv.org/pdf/2003.05161.pdf) (A Benchmark for Systematic Generalization in rounded Language Understanding)
+  - **Addition**:
+    - [Model Pruning](https://papers.nips.cc/paper/2020/file/eae15aabaa768ae4a5993a8a4f4fa6e4-Paper.pdf) (Movement Pruning: Adaptive Sparsity by Fine-Tuning)
+    - [Model Quantization](https://arxiv.org/pdf/2004.07320.pdf) (TRAINING WITH QUANTIZATION NOISE FOR EXTREME MODEL COMPRESSION)
+    - [BabyAI](https://arxiv.org/pdf/2007.12770.pdf) (BabyAI 1.1)
+    - [gSCAN](https://arxiv.org/pdf/2003.05161.pdf) (A Benchmark for Systematic Generalization in rounded Language Understanding)
 
 - [Transformers](09_Transformer.md)
   - [Attention Is All You Need](https://arxiv.org/abs/1706.03762.pdf)
@@ -83,22 +84,29 @@ Lesson Video: [Bilibili](https://www.bilibili.com/video/BV1uL41137jN) | [YouTube
   - [Hierarchical Neural Story Generation](https://arxiv.org/abs/1805.04833.pdf)
   - [How NOT To Evaluate Your Dialogue System](https://arxiv.org/abs/1603.08023.pdf)
 
-- Reference in Language and Coreference Resolution
+- [Reference in Language and Coreference Resolution](13_Coreference_Resolution.md)
   - [Coreference Resolution chapter of Jurafsky and Martin](https://web.stanford.edu/~jurafsky/slp3/22.pdf)
   - [End-to-end Neural Coreference Resolution](https://arxiv.org/pdf/1707.07045.pdf).
 
-- T5 and large language models: The good, the bad, and the ugly
+- [T5 and large language models: The good, the bad, and the ugly](14_T5_And_Large_Models.md)
   - [Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer](https://colinraffel.com/publications/jmlr2020exploring.pdf)
+  - **Addition**:
+    - [mT5: A Massively Multilingual Pre-trained Text-to-Text Transformer](https://arxiv.org/pdf/2010.11934.pdf)
+    - [How Much Knowledge Can You Pack Into the Parameters of a Language Model?](https://arxiv.org/pdf/2002.08910.pdf)
+    - [Extracting Training Data from Large Language Models](https://arxiv.org/pdf/2012.07805.pdf) 
+    - [Do Transformer Modifications Transfer Across Implementations and Applications?](https://arxiv.org/pdf/2102.11972.pdf) 
 
-- Integrating knowledge in language models
+- [Integrating knowledge in language models](15_Integrating_Knowledge.md)
   - [ERNIE: Enhanced Language Representation with Informative Entities](https://arxiv.org/pdf/1905.07129.pdf)
   - [Barack’s Wife Hillary: Using Knowledge Graphs for Fact-Aware Language Modeling](https://arxiv.org/pdf/1906.07241.pdf)
   - [Pretrained Encyclopedia: Weakly Supervised Knowledge-Pretrained Language Model](https://arxiv.org/pdf/1912.09637.pdf)
   - [Language Models as Knowledge Bases?](https://www.aclweb.org/anthology/D19-1250.pdf)
 
-- Social & Ethical Considerations in NLP Systems
-- Model Analysis and Explanation
-- Future of NLP + Deep Learning
+- [Social & Ethical Considerations in NLP Systems](16_Social_And_Ethical_Considerations.md)
+
+- [Model Analysis and Explanation](17_Analysis_And_Explanation.md)
+
+- [Future of NLP + Deep Learning](18_Future_of_NLP.md)
 
 ## Tutorial
 
