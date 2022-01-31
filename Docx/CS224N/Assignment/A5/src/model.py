@@ -1,4 +1,3 @@
-
 """
 GPT model:
 - the initial stem consists of a combination of token encoding and a positional encoding
@@ -27,14 +26,16 @@ class GPTConfig:
     def __init__(self, vocab_size, block_size, **kwargs):
         self.vocab_size = vocab_size
         self.block_size = block_size
-        for k,v in kwargs.items():
+        for k, v in kwargs.items():
             setattr(self, k, v)
+
 
 class GPT1Config(GPTConfig):
     """ GPT-1 like network roughly 125M params """
     n_layer = 12
     n_head = 12
     n_embd = 768
+
 
 class Block(nn.Module):
     """ an unassuming Transformer block """
@@ -58,6 +59,7 @@ class Block(nn.Module):
         x = x + self.attn(self.ln1(x))
         x = x + self.mlp(self.ln2(x))
         return x
+
 
 class GPT(nn.Module):
     """  the full GPT language model, with a context size of block_size """
@@ -97,8 +99,8 @@ class GPT(nn.Module):
         assert t <= self.block_size, "Cannot forward, model block size is exhausted."
 
         # forward the GPT model
-        token_embeddings = self.tok_emb(idx) # each index maps to a (learnable) vector
-        position_embeddings = self.pos_emb[:, :t, :] # each position maps to a (learnable) vector
+        token_embeddings = self.tok_emb(idx)  # each index maps to a (learnable) vector
+        position_embeddings = self.pos_emb[:, :t, :]  # each position maps to a (learnable) vector
         x = self.drop(token_embeddings + position_embeddings)
         x = self.blocks(x)
         x = self.ln_f(x)
@@ -111,5 +113,6 @@ class GPT(nn.Module):
 
         return logits, loss
 
+
 class CustomLayerNorm(nn.Module):
-  pass
+    pass

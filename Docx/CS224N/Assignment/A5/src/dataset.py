@@ -21,12 +21,13 @@ the same as that of the pretraining dataset.
 You don't need to implement anything in NameDataset.
 """
 
+
 class NameDataset(Dataset):
     def __init__(self, pretraining_dataset, data):
-        self.MASK_CHAR = u"\u2047" # the doublequestionmark character, for mask
-        self.PAD_CHAR = u"\u25A1" # the empty square character, for pad
-        self.itos = pretraining_dataset.itos 
-        self.stoi = pretraining_dataset.stoi 
+        self.MASK_CHAR = u"\u2047"  # the doublequestionmark character, for mask
+        self.PAD_CHAR = u"\u25A1"  # the empty square character, for pad
+        self.itos = pretraining_dataset.itos
+        self.stoi = pretraining_dataset.stoi
         self.block_size = pretraining_dataset.block_size
         self.data = list(data.encode('utf-8').decode('ascii', errors='ignore').split('\n'))
 
@@ -37,9 +38,9 @@ class NameDataset(Dataset):
     def __getitem__(self, idx):
         inp, oup = self.data[idx].split('\t')
         x = inp + self.MASK_CHAR + oup + self.MASK_CHAR
-        x = x + self.PAD_CHAR*(self.block_size - len(x))
-        y = self.PAD_CHAR*(len(inp)-1) + x[len(inp):]
-        
+        x = x + self.PAD_CHAR * (self.block_size - len(x))
+        y = self.PAD_CHAR * (len(inp) - 1) + x[len(inp):]
+
         x = x[:-1]
         x = torch.tensor([self.stoi[c] for c in x], dtype=torch.long)
         y = torch.tensor([self.stoi[c] for c in y], dtype=torch.long)
@@ -141,19 +142,21 @@ Here are some examples of input-output pairs (x, y):
 
 
 """
+
+
 class CharCorruptionDataset(Dataset):
     def __init__(self, data, block_size):
-        self.MASK_CHAR = u"\u2047" # the doublequestionmark character, for mask
-        self.PAD_CHAR = u"\u25A1" # the empty square character, for pad
+        self.MASK_CHAR = u"\u2047"  # the doublequestionmark character, for mask
+        self.PAD_CHAR = u"\u25A1"  # the empty square character, for pad
 
         chars = list(sorted(list(set(data))))
-        assert self.MASK_CHAR not in chars 
+        assert self.MASK_CHAR not in chars
         assert self.PAD_CHAR not in chars
         chars.insert(0, self.MASK_CHAR)
         chars.insert(0, self.PAD_CHAR)
 
-        self.stoi = { ch:i for i,ch in enumerate(chars) }
-        self.itos = { i:ch for i,ch in enumerate(chars) }
+        self.stoi = {ch: i for i, ch in enumerate(chars)}
+        self.itos = {i: ch for i, ch in enumerate(chars)}
 
         data_size, vocab_size = len(data), len(chars)
         print('data has %d characters, %d unique.' % (data_size, vocab_size))
@@ -168,7 +171,78 @@ class CharCorruptionDataset(Dataset):
 
     def __getitem__(self, idx):
         # TODO [part e]: see spec above
-        raise NotImplementedError
+        doc = self.data[idx]
+
+        # 1. Randomly truncate the document to a length no less than 4 characters,
+        # and no more than int(self.block_size*7/8) characters.
+        import random
+        random_length = random.randint(4, int(self.block_size * 7 / 8))
+        truncated_doc = doc[:random_length]
+
+        # 2. Now, break the (truncated) document into three substrings: [prefix] [masked_content] [suffix]
+        #
+        # In other words, choose three strings prefix, masked_content and suffix
+        #  such that prefix + masked_content + suffix = [the original document].
+        #  The length of [masked_content] should be random, and 1/4 the length of the
+        #  truncated document on average.
+        #
+        # - IMPORTANT: You are free to decide how to perform this operation, but
+        # make sure that the length is picked _randomly_ (has a chance of being more or
+        # less than 1/4 the length of the truncated document) for full credit.
+
+        # Take the length of the (randomly truncated) document.
+        truncated_doc_length = len(doc)
+
+        # Add a random perturbation to the length of the masked content with randint().
+        # Just pick the right bounds, for example, -1/8 and 1/8 of the truncated length
+        random_perturbation = random.randint(int(-0.125 * truncated_doc_length), int(0.125 * truncated_doc_length))
+
+        # Compute expected_mask_len by using 1/4 of the truncated document length
+        # and adding a perturbation.
+        expected_mask_len = int(0.25 * truncated_doc_length + random_perturbation)
+        # This gets you a masked length with minimum length of 1/8 of truncated length and
+        # maximum length of 3/8 of the truncated length, and the average is 1/4.
+
+        # randomly determine where to start the masked portion somewhere between the start
+        # of the truncated document and the last index such that there are as many characters
+        # left in the sequence as we determined the mask length should be
+        start_mask = random.randint(0, truncated_doc_length - expected_mask_len)
+
+        masked_content = truncated_doc[start_mask:start_mask + expected_mask_len]
+        prefix = truncated_doc[:start_mask]
+        suffix = truncated_doc[len(prefix) + expected_mask_len:]
+
+        # 3. Rearrange these substrings into the following form:
+        #
+        #   [prefix] MASK_CHAR [suffix] MASK_CHAR [masked_content] [pads]
+        #
+        # This resulting string, denoted masked_string, serves as the output example.
+        # Here MASK_CHAR is the masking character defined in Vocabulary Specification,
+        #   and [pads] is a string of repeated PAD_CHAR characters chosen so that the
+        #   entire string is of length self.block_size.
+        # Intuitively, the [masked_content], a string, is removed from the document and
+        #   replaced with MASK_CHAR (the masking character defined in Vocabulary
+        #   Specification). After the suffix of the string, the MASK_CHAR is seen again,
+        #   followed by the content that was removed, and the padding characters.
+
+        masked_string = prefix + self.MASK_CHAR + suffix + self.MASK_CHAR + masked_content
+        masked_string += self.PAD_CHAR * (self.block_size - len(masked_string))
+
+        # We now use masked_string to construct the input and output example pair. To
+        # do so, simply take the input string to be masked_string[:-1], and the output
+        # string to be masked_string[1:]. In other words, for each character, the goal is
+        # to predict the next character in the masked string.
+
+        input = masked_string[:-1]
+        output = masked_string[1:]
+
+        # Making use of the vocabulary that you defined, encode the resulting input
+        # and output strings as Long tensors and return the resulting data point.
+
+        x = torch.tensor([self.stoi[c] for c in input], dtype=torch.long)
+        y = torch.tensor([self.stoi[c] for c in output], dtype=torch.long)
+        return x, y
+
 
 """
 Code under here is strictly for your debugging purposes; feel free to modify
@@ -177,28 +251,27 @@ as desired.
 if __name__ == '__main__':
     argp = argparse.ArgumentParser()
     argp.add_argument('dataset_type', help="Type of dataset to sample from."
-            "Options: namedata, charcorruption.",
-            choices=["namedata", "charcorruption"])
+                                           "Options: namedata, charcorruption.",
+                      choices=["namedata", "charcorruption"])
     args = argp.parse_args()
 
     if args.dataset_type == 'namedata':
         # Even if it hasn't been implemented, we use it to define the vocab
-        corruption_dataset = CharCorruptionDataset(open('wiki.txt').read(), 128) 
+        corruption_dataset = CharCorruptionDataset(open('wiki.txt', encoding='utf-8').read(), 128)
         # Make the name dataset
         name_dataset = NameDataset(corruption_dataset,
-            open('birth_places_train.tsv').read())
+                                   open('birth_places_train.tsv').read())
         for _, example in zip(range(4), name_dataset):
             x, y = example
             print('x:', ''.join([name_dataset.itos[int(c)] for c in x]))
             print('y:', ''.join([name_dataset.itos[int(c)] for c in y]))
         pass
     elif args.dataset_type == 'charcorruption':
-        corruption_dataset = CharCorruptionDataset(open('wiki.txt').read(), 128) 
+        corruption_dataset = CharCorruptionDataset(open('wiki.txt', encoding='utf-8').read(), 128)
         for _, example in zip(range(4), corruption_dataset):
             x, y = example
             print('x:', ''.join([corruption_dataset.itos[int(c)] for c in x]))
             print('y:', ''.join([corruption_dataset.itos[int(c)] for c in y]))
     else:
         raise ValueError("Unknown dataset type in command line args: {}"
-                .format(args.dataset_type))
-
+                         .format(args.dataset_type))

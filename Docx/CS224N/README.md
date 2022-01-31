@@ -69,6 +69,8 @@ Lesson Video: [Bilibili](https://www.bilibili.com/video/BV1uL41137jN) | [YouTube
 - [More about Transformers and Pretraining](10_Pretraining.md)
   - [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/pdf/1810.04805.pdf)
   - [Contextual Word Representations: A Contextual Introduction](https://arxiv.org/abs/1902.06006.pdf)
+  - **Appendix**: 
+    - Pretrain and Finetune: Pre training refers to a model of pre training or the process of pre training the model; Fine tuning refers to the process of applying the pre trained model to its own data set and adapting the parameters to its own data set.【预训练就是指预先训练的一个模型或者指预先训练模型的过程；微调就是指将预训练过的模型作用于自己的数据集，并使参数适应自己数据集的过程】
 
 - [Question Answering](11_Question_Answering.md)
   - [SQuAD: 100,000+ Questions for Machine Comprehension of Text](https://arxiv.org/pdf/1606.05250.pdf)
