@@ -85,8 +85,8 @@
 #### Transformer
 
 - [Base_Transformer](./Models/Transformer/base_transformer.py) : [Docx ](./Docx/Transformer/base_transformer.md) : [Colab](https://colab.research.google.com/drive/1avycotLAFcgXUP1qTk0bSX_jVGhjtZaV?usp=sharing)
-- Bert系列
-- GTP系列
+- Bert Series
+- GTP Series
 - XLNet
 - MT-DNN
 
