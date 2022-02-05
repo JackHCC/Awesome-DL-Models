@@ -12,16 +12,26 @@
 📗 [Lesson Note](https://blog.creativecc.cn/posts/Lesson-Statistical-Learning-Method.html) 👈 
 
 - [Perception](./Models/Statistical-Learning-Method/perception.py)
-- [KNN](./Models/Statistical-Learning-Method/knn.py)
+- [KNN(K-Nearest Neighbor)](./Models/Statistical-Learning-Method/knn.py)
+- Naive Bayes
 - [Decision Tree](./Models/Statistical-Learning-Method/decision_tree.py)
-- [Logistic Regression](./Models/Statistical-Learning-Method/logistic_regression.py)
-- Support Vector Machine
+- [Logistic Regression and Maximum Entropy Model](./Models/Statistical-Learning-Method/logistic_regression.py)
+- SVM(Support Vector Machine)
 - Adaboost
-- EM
-- Hidden Markov
-- Conditional Random Field
+- EM(Expectation Maximum)
+- HMM(Hidden Markov Model)
+- CRF(Conditional Random Field)
 
 #### Unsupervised Learning
+
+- K-Means
+- SVD(Singular Value Decomposition)
+- PCA(Principal Component Analysis)
+- LSA(Latent Semantic Analysis)
+- PLSA(Probabilistic Latent Semantic Analysis)
+- MCMC(Markov Chain Monte Carlo Method)
+- LDA(Latent Dirichlet Allocation)
+- PageRank
 
 ## Computer Vision
 
@@ -130,4 +140,3 @@
 
 
 
-## Multimodal Deep Learning
