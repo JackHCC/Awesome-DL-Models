@@ -13,8 +13,8 @@
 
 - [Perception](./Models/Statistical-Learning-Method/perception.py)
 - [KNN](./Models/Statistical-Learning-Method/knn.py)
-- Decision Tree
-- Logistic Regression
+- [Decision Tree](./Models/Statistical-Learning-Method/decision_tree.py)
+- [Logistic Regression](./Models/Statistical-Learning-Method/logistic_regression.py)
 - Support Vector Machine
 - Adaboost
 - EM
