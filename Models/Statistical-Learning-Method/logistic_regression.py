@@ -5,7 +5,7 @@
 @File    :logistic_regression.py
 @Author  :JackHCC
 @Date    :2022/2/5 19:59 
-@Desc    :
+@Desc    :Implement Logistic Regression and Maximum Entropy Model
 
 '''
 import matplotlib.pyplot as plt
@@ -324,6 +324,7 @@ if __name__ == '__main__':
     print("模型准确率：{:.2%}".format(clf.score(X_train, y_train)))
 
     # Test Max Entropy
+    print("------------------------------------------")
     print("开始测试最大熵……")
     # 训练数据集
     dataset = np.array([['no', 'sunny', 'hot', 'high', 'FALSE'],

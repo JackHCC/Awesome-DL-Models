@@ -142,6 +142,7 @@ class DisplayModel:
 
 
 if __name__ == "__main__":
+    print("开始测试感知器算法……")
     X = np.array([[3, 3], [4, 3], [1, 1]])
     Y = np.array([1, 1, -1])
     model = Perception(X, Y, lr=1)

@@ -16,10 +16,10 @@
 - Naive Bayes
 - [Decision Tree](./Models/Statistical-Learning-Method/decision_tree.py)
 - [Logistic Regression and Maximum Entropy Model](./Models/Statistical-Learning-Method/logistic_regression.py)
-- SVM(Support Vector Machine)
-- Adaboost
-- EM(Expectation Maximum)
-- HMM(Hidden Markov Model)
+- [SVM(Support Vector Machine)](./Models/Statistical-Learning-Method/support_vector_machines.py)
+- [Adaboost(Adaptive Boost)](./Models/Statistical-Learning-Method/adaboost.py)
+- [EM(Expectation Maximization)](./Models/Statistical-Learning-Method/expectation_maximization.py)
+- [HMM(Hidden Markov Model)](./Models/Statistical-Learning-Method/hidden_markov_model.py)
 - CRF(Conditional Random Field)
 
 #### Unsupervised Learning

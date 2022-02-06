@@ -238,6 +238,7 @@ class LeastSquareRegTree:
 
 if __name__ == '__main__':
     # Test C4.5 Decision Tree
+    print("开始测试C4.5算法……")
     feature_names = np.array(["年龄", "有工作", "有自己的房子", "信贷情况"])
     X_train = np.array([
         ["青年", "否", "否", "一般"],
@@ -264,6 +265,8 @@ if __name__ == '__main__':
     dt_tree.fit(X_train, y, feature_names)
     print(dt_tree)
 
+    print("------------------------------------------")
+    print("开始测试CART最小二乘回归算法……")
     # Test CART
     train_X = np.array([[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]).T
     y = np.array([4.50, 4.75, 4.91, 5.34, 5.80, 7.05, 7.90, 8.23, 8.70, 9.00])
