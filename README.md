@@ -24,9 +24,9 @@
 
 #### Unsupervised Learning
 
-- K-Means
-- SVD(Singular Value Decomposition)
-- PCA(Principal Component Analysis)
+- [K-Means](./Models/Statistical-Learning-Method/clustering.py)
+- [SVD(Singular Value Decomposition)](./Models/Statistical-Learning-Method/svd.py)
+- [PCA(Principal Component Analysis)](./Models/Statistical-Learning-Method/pca.py)
 - LSA(Latent Semantic Analysis)
 - PLSA(Probabilistic Latent Semantic Analysis)
 - MCMC(Markov Chain Monte Carlo Method)
