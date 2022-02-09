@@ -27,8 +27,8 @@
 - [K-Means](./Models/Statistical-Learning-Method/clustering.py)
 - [SVD(Singular Value Decomposition)](./Models/Statistical-Learning-Method/svd.py)
 - [PCA(Principal Component Analysis)](./Models/Statistical-Learning-Method/pca.py)
-- LSA(Latent Semantic Analysis)
-- PLSA(Probabilistic Latent Semantic Analysis)
+- [LSA(Latent Semantic Analysis)](./Models/Statistical-Learning-Method/latent_semantic_analysis.py)
+- [PLSA(Probabilistic Latent Semantic Analysis)](./Models/Statistical-Learning-Method/plsa.py)
 - MCMC(Markov Chain Monte Carlo Method)
 - LDA(Latent Dirichlet Allocation)
 - PageRank
