@@ -68,6 +68,109 @@ def do_lsa(X, k, words):
     return topics
 
 
+def nmp_training(X, k, max_iter=100, tol=1e-4, random_state=0):
+    """非负矩阵分解的迭代算法（平方损失）
+
+    :param X: 单词-文本矩阵
+    :param k: 文本集合的话题个数k
+    :param max_iter: 最大迭代次数
+    :param tol: 容差
+    :param random_state: 随机种子
+    :return: 话题矩阵W,文本表示矩阵H
+    """
+    n_features, n_samples = X.shape
+
+    # 初始化
+    np.random.seed(random_state)
+    W = np.random.random((n_features, k))
+    H = np.random.random((k, n_samples))
+
+    # 计算当前平方损失
+    last_score = np.sum(np.square(X - np.dot(W, H)))
+
+    # 迭代
+    for _ in range(max_iter):
+        # 更新W的元素
+        A = np.dot(X, H.T)  # X H^T
+        B = np.dot(np.dot(W, H), H.T)  # W H H^T
+        for i in range(n_features):
+            for l in range(k):
+                W[i][l] *= A[i][l] / B[i][l]
+
+        # 更新H的元素
+        C = np.dot(W.T, X)  # W^T X
+        D = np.dot(np.dot(W.T, W), H)  # W^T W H
+        for l in range(k):
+            for j in range(n_samples):
+                H[l][j] *= C[l][j] / D[l][j]
+
+        # 检查迭代更新量是否已小于容差
+        now_score = np.sum(np.square(X - np.dot(W, H)))
+        # print(last_score - now_score)
+        if last_score - now_score < tol:
+            break
+
+        last_score = now_score
+
+    return W, H
+
+
+def nmp_divergence_training(X, k, max_iter=100, tol=1e-4, random_state=0):
+    """非负矩阵分解的迭代算法（散度）
+
+    :param X: 单词-文本矩阵
+    :param k: 文本集合的话题个数k
+    :param max_iter: 最大迭代次数
+    :param tol: 容差
+    :param random_state: 随机种子
+    :return: 话题矩阵W,文本表示矩阵H
+    """
+    n_features, n_samples = X.shape
+
+    # 初始化
+    np.random.seed(random_state)
+    W = np.random.random((n_features, k))
+    H = np.random.random((k, n_samples))
+
+    def score():
+        """计算散度的损失函数"""
+        Y = np.dot(W, H)
+        score = 0
+        for i in range(n_features):
+            for j in range(n_samples):
+                score += (X[i][j] * np.log(X[i][j] / Y[i][j]) if X[i][j] * Y[i][j] > 0 else 0) + (- X[i][j] + Y[i][j])
+        return score
+
+    # 计算当前损失函数
+    last_score = score()
+
+    # 迭代
+    for _ in range(max_iter):
+        # 更新W的元素
+        WH = np.dot(W, H)
+        for i in range(n_features):
+            for l in range(k):
+                v1 = sum(H[l][j] * X[i][j] / WH[i][j] for j in range(n_samples))
+                v2 = sum(H[l][j] for j in range(n_samples))
+                W[i][l] *= v1 / v2
+
+        # 更新H的元素
+        WH = np.dot(W, H)
+        for l in range(k):
+            for j in range(n_samples):
+                v1 = sum(W[i][l] * X[i][j] / WH[i][j] for i in range(n_features))
+                v2 = sum(W[i][l] for i in range(n_features))
+                H[l][j] *= v1 / v2
+
+        now_score = score()
+        if last_score - now_score < tol:
+            break
+
+        last_score = now_score
+
+    return W, H
+
+
 if __name__ == "__main__":
     print("开始测试LSA……")
     org_topics, text, words = load_lsa_data('./data/bbc_text.csv')  # 加载数据
@@ -82,3 +185,41 @@ if __name__ == "__main__":
         print('Topic {}: {}'.format(i + 1, topics[i]))  # 打印分析后得到的每个话题
     end = time.time()  # 保存结束时间
     print('Time:', end - start)
+
+    print("------------------------------------------")
+    print("开始测试非负矩阵分解的迭代算法（平方损失）……")
+    X = np.array([[0, 0, 1, 1, 0, 0, 0, 0, 0],
+                  [0, 0, 0, 0, 0, 1, 0, 0, 1],
+                  [0, 1, 0, 0, 0, 0, 0, 1, 0],
+                  [0, 0, 0, 0, 0, 0, 1, 0, 1],
+                  [1, 0, 0, 0, 0, 1, 0, 0, 0],
+                  [1, 1, 1, 1, 1, 1, 1, 1, 1],
+                  [1, 0, 1, 0, 0, 0, 0, 0, 0],
+                  [0, 0, 0, 0, 0, 0, 1, 0, 1],
+                  [0, 0, 0, 0, 0, 2, 0, 0, 1],
+                  [1, 0, 1, 0, 0, 0, 0, 1, 0],
+                  [0, 0, 0, 1, 1, 0, 0, 0, 0]])
+
+    np.set_printoptions(precision=2, suppress=True)
+    W, H = nmp_training(X, 3)
+    print("W:", W)
+    print("H:", H)
+    Y = np.dot(W, H)
+    print("Y:", Y)
+    print("Loss", np.sum(np.square(X - Y)))  # 7.661276178695074
+
+    print("------------------------------------------")
+    print("开始测试非负矩阵分解的迭代算法（散度）……")
+    W, H = nmp_training(X, 3)
+    print("W:", W)
+    print("H:", H)
+    Y = np.dot(W, H)
+    print("Y:", Y)
+    score = 0
+    s1, s2 = X.shape
+
+    for i in range(s1):
+        for j in range(s2):
+            score += (X[i][j] * np.log(X[i][j] / Y[i][j]) if X[i][j] * Y[i][j] > 0 else 0) + (- X[i][j] + Y[i][j])
+    print("score", score)  # 11.664003859511485
+

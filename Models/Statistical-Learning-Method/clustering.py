@@ -18,6 +18,104 @@ from data.utils import load_data
 import matplotlib.pyplot as plt
 
 
+def mahalanobis_distance(X):
+    """计算所有样本之间的马哈拉诺比斯距离矩阵"""
+    n_samples = len(X[0])
+
+    # 计算协方差矩阵
+    S = np.cov(X)
+
+    # 计算协方差矩阵的逆矩阵
+    S = np.linalg.inv(S)
+
+    # 构造马哈拉诺比斯距离矩阵
+    D = np.zeros((n_samples, n_samples))  # 初始化为零矩阵
+
+    for i in range(n_samples):
+        for j in range(i + 1, n_samples):
+            xi = X[:, i][:, np.newaxis]
+            xj = X[:, j][:, np.newaxis]
+            D[i][j] = D[j][i] = np.sqrt((np.dot(np.dot((xi - xj).T, S), (xi - xj))))
+
+    return D
+
+
+def correlation_coefficient(X):
+    """计算所有样本之间的相关系数矩阵"""
+    n_samples = len(X[0])
+
+    # 计算均值
+    means = np.mean(X, axis=0)
+
+    # 计算误差平方和
+    variance = [np.square((X[:, i] - means[i])).sum() for i in range(n_samples)]
+
+    # 构造相关系数矩阵
+    D = np.identity(n_samples)  # 初始化为单位矩阵
+
+    for i in range(n_samples):
+        for j in range(i + 1, n_samples):
+            xi, xj = X[:, i], X[:, j]
+            numerator = ((xi - means[i]) * (xj - means[j])).sum()
+            denominator = np.sqrt(variance[i] * variance[j])
+            if denominator:
+                D[i][j] = D[j][i] = numerator / denominator
+            else:  # 当出现零方差时
+                D[i][j] = D[j][i] = np.nan
+
+    return D
+
+
+def cosine(X):
+    """计算所有样本之间的夹角余弦矩阵"""
+    n_samples = len(X[0])
+
+    # 计算平方和
+    square = [np.square(X[:, i]).sum() for i in range(n_samples)]
+
+    # 构造夹角余弦矩阵
+    D = np.identity(n_samples)  # 初始化为单位矩阵
+
+    for i in range(n_samples):
+        for j in range(i + 1, n_samples):
+            xi, xj = X[:, i], X[:, j]
+            numerator = (xi * xj).sum()
+            denominator = np.sqrt(square[i] * square[j])
+            if denominator:
+                D[i][j] = D[j][i] = numerator / denominator
+            else:  # 当出现零平方和时
+                D[i][j] = D[j][i] = np.nan
+
+    return D
+
+
+def scatter_matrix(X, G):
+    """计算样本散布矩阵
+
+    :param X: 样本
+    :param G: 类别包含的样本
+    :return: 样本散步矩阵
+    """
+    n_samples = len(G)
+    n_features = len(X)
+
+    # 计算类的中心
+    means = np.mean(X[:, G], axis=1)
+
+    A = np.zeros((n_features, n_features))
+    for i in range(n_samples):
+        A += np.dot((X[:, i] - means)[:, np.newaxis], (X[:, i] - means)[:, np.newaxis].T)
+
+    return A
+
+def covariance_matrix(X, G):
+    """计算样本协方差矩阵"""
+    n_features = len(X)
+    A = scatter_matrix(X, G)
+    S = A / (n_features - 1)
+    return S
+
+
 # 定义标准化函数，对每一列特征进行min-max标准化，将数据缩放到0-1之间
 # 标准化处理对于计算距离的机器学习方法是非常重要的，因为特征的尺度不同会导致计算出来的距离倾向于尺度大的特征，为保证距离对每一列特征都是公平的，必须将所有特征缩放到同一尺度范围内
 def normalize(Xarray):
@@ -234,6 +332,32 @@ def adjusted_rand_index(group_dict, Ylist, k):
 
 
 if __name__ == "__main__":
+    print("开始测试马哈拉诺比斯距离矩阵……")
+    X = np.array([[0, 0, 1, 5, 5],
+                  [2, 0, 0, 0, 2]])
+    print(mahalanobis_distance(X))
+
+    print("------------------------------------------")
+    print("开始测试相关系数矩阵……")
+    X = np.array([[0, 0, 1, 5, 5],
+                  [2, 0, 0, 0, 2]])
+
+    print(correlation_coefficient(X))
+
+    print("------------------------------------------")
+    print("开始测试夹角余弦矩阵……")
+    X = np.array([[0, 0, 1, 5, 5],
+                  [2, 0, 0, 0, 2]])
+    print(cosine(X))
+
+    print("------------------------------------------")
+    print("开始测试类的样本散布矩阵与样本协方差矩阵……")
+    X = np.array([[0, 0, 1, 5, 5],
+                  [2, 0, 0, 0, 2]])
+    print(scatter_matrix(X, [2, 3, 4]))
+    print(covariance_matrix(X, [2, 3, 4]))
+
+    print("------------------------------------------")
     print("开始测试聚合聚类算法……")
     Xarray, Ylist = load_data('./data/iris.data')  # 加载数据
     start = time.time()  # 保存开始时间

@@ -13,14 +13,14 @@
 
 - [Perception](./Models/Statistical-Learning-Method/perception.py)
 - [KNN(K-Nearest Neighbor)](./Models/Statistical-Learning-Method/knn.py)
-- Naive Bayes
+- [Naive Bayes](./Models/Statistical-Learning-Method/naive_bayes.py)
 - [Decision Tree](./Models/Statistical-Learning-Method/decision_tree.py)
 - [Logistic Regression and Maximum Entropy Model](./Models/Statistical-Learning-Method/logistic_regression.py)
 - [SVM(Support Vector Machine)](./Models/Statistical-Learning-Method/support_vector_machines.py)
 - [Adaboost(Adaptive Boost)](./Models/Statistical-Learning-Method/adaboost.py)
 - [EM(Expectation Maximization)](./Models/Statistical-Learning-Method/expectation_maximization.py)
 - [HMM(Hidden Markov Model)](./Models/Statistical-Learning-Method/hidden_markov_model.py)
-- CRF(Conditional Random Field)
+- [CRF(Conditional Random Field)](./Models/Statistical-Learning-Method/conditional_random_field.py)
 
 #### Unsupervised Learning
 
@@ -29,9 +29,9 @@
 - [PCA(Principal Component Analysis)](./Models/Statistical-Learning-Method/pca.py)
 - [LSA(Latent Semantic Analysis)](./Models/Statistical-Learning-Method/latent_semantic_analysis.py)
 - [PLSA(Probabilistic Latent Semantic Analysis)](./Models/Statistical-Learning-Method/plsa.py)
-- MCMC(Markov Chain Monte Carlo Method)
-- LDA(Latent Dirichlet Allocation)
-- PageRank
+- [MCMC(Markov Chain Monte Carlo Method)](./Models/Statistical-Learning-Method/markov_chain_monte_carlo.py)
+- [LDA(Latent Dirichlet Allocation)](./Models/Statistical-Learning-Method/latent_dirichlet_allocation.py)
+- [PageRank](./Models/Statistical-Learning-Method/pagerank.py)
 
 ## Computer Vision
 

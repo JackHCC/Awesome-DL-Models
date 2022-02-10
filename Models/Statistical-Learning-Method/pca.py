@@ -12,6 +12,53 @@ import numpy as np
 import pandas as pd
 
 
+def pca_by_feature(R, need_accumulative_contribution_rate=0.75):
+    """协方差矩阵/相关矩阵求解主成分及其因子载荷量和贡献率（打印到控制台）
+
+    :param R: 协方差矩阵/相关矩阵
+    :param need_accumulative_contribution_rate: 需要达到的累计方差贡献率
+    :return: None
+    """
+    n_features = len(R)
+
+    # 求解相关矩阵的特征值和特征向量
+    features_value, features_vector = np.linalg.eig(R)
+
+    # 依据特征值大小排序特征值和特征向量
+    z = [(features_value[i], features_vector[:, i]) for i in range(n_features)]
+    z.sort(key=lambda x: x[0], reverse=True)
+    features_value = [z[i][0] for i in range(n_features)]
+    features_vector = np.hstack([z[i][1][:, np.newaxis] for i in range(n_features)])
+
+    # 计算所需的主成分数量
+    total_features_value = sum(features_value)  # 特征值总和
+    need_accumulative_contribution_rate *= total_features_value
+    n_principal_component = 0  # 所需的主成分数量
+    accumulative_contribution_rate = 0
+    while accumulative_contribution_rate < need_accumulative_contribution_rate:
+        accumulative_contribution_rate += features_value[n_principal_component]
+        n_principal_component += 1
+
+    # 输出单位特征向量和主成分的方差贡献率
+    print("【单位特征向量和主成分的方差贡献率】")
+    for i in range(n_principal_component):
+        print("主成分:", i,
+              "方差贡献率:", features_value[i] / total_features_value,
+              "特征向量:", features_vector[:, i])
+
+    # 计算各个主成分的因子载荷量：factor_loadings[i][j]表示第i个主成分对第j个变量的相关关系，即因子载荷量
+    factor_loadings = np.vstack(
+        [[np.sqrt(features_value[i]) * features_vector[j][i] / np.sqrt(R[j][j]) for j in range(n_features)]
+         for i in range(n_principal_component)]
+    )
+
+    # 输出主成分的因子载荷量和贡献率
+    print("【主成分的因子载荷量和贡献率】")
+    for i in range(n_principal_component):
+        print("主成分:", i, "因子载荷量:", factor_loadings[i])
+    print("所有主成分对变量的贡献率:", [np.sum(factor_loadings[:, j] ** 2) for j in range(n_features)])
+
+
 # 根据保留多少维特征进行降维
 class PCAcomponent(object):
     def __init__(self, X, N=3):
@@ -80,6 +127,14 @@ class PCApercent(object):
 
 
 if __name__ == "__main__":
+    print("开始测试相关矩阵求解主成分及其因子载荷量和贡献率……")
+    X = np.array([[1, 0.44, 0.29, 0.33],
+                  [0.44, 1, 0.35, 0.32],
+                  [0.29, 0.35, 1, 0.60],
+                  [0.33, 0.32, 0.60, 1]])
+    pca_by_feature(X)
+
+    print("------------------------------------------")
     print("开始测试PCA算法……")
     df = pd.read_csv(r'./data/iris.data', header=None)
     data, label = df[range(len(df.columns) - 1)], df[[len(df.columns) - 1]]
