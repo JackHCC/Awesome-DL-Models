@@ -152,3 +152,9 @@ if __name__ == "__main__":
                   [1 / 3, 0, 0, 1 / 2],
                   [1 / 3, 1 / 2, 0, 0]])
     print(pagerank_3(P))  # [0.1  0.13 0.13 0.13]
+
+    """
+    《统计学习方法》学习参考：
+    1. https://zhuanlan.zhihu.com/p/392588258
+    2. https://zhuanlan.zhihu.com/p/395501462
+    """

@@ -9,7 +9,7 @@
 ### Statistical Learning Method
 
 #### Supervised Learning
-📗 [Lesson Note](https://blog.creativecc.cn/posts/Lesson-Statistical-Learning-Method.html) 👈 
+📗 [Note](https://blog.creativecc.cn/posts/Lesson-Statistical-Learning-Method.html) 👈 
 
 - [Perception](./Models/Statistical-Learning-Method/perception.py)
 - [KNN(K-Nearest Neighbor)](./Models/Statistical-Learning-Method/knn.py)
