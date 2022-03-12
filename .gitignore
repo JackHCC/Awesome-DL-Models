@@ -11,3 +11,4 @@ Docx/CS224N/Assignment/A4/*.vocab
 Docx/CS224N/Assignment/A4/vocab.json
 Docx/CS224N/Assignment/A4/model.bin
 Docx/CS224N/Assignment/A4/model.bin.optim
+Models/Conv/Datasets/
