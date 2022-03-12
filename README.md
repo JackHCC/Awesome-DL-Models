@@ -83,7 +83,7 @@
 
 ### Embedding
 
-- Word2Vec
+- [Word2Vec](./Models/Word-Embedding/Word2Vec) | [Cbow](./Models/Word-Embedding/Word2Vec/cbow.py) | [Skip-gram](./Models/Word-Embedding/Word2Vec/skip_gram.py)
 - Glove
 - FastText
 - ELMo
