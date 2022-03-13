@@ -10,9 +10,7 @@
 '''
 import torch
 import torch.nn as nn
-import torchvision
-import torchvision.transforms as transforms
-from _utils import load_data, train
+from _utils import load_data, train, save_model
 
 
 class LeNet5(nn.Module):
@@ -22,7 +20,8 @@ class LeNet5(nn.Module):
         self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2)
         self.conv2 = nn.Conv2d(in_channels=6, out_channels=16, kernel_size=5)
         self.pool2 = nn.MaxPool2d(kernel_size=2, stride=2)
-        self.fc1 = nn.Linear(in_features=5 * 5 * 16, out_features=120)  # 全连接层的输入输出feature是需要根据输入输出计算的，这里最初输入图片式28*28
+        # 注意: 全连接层的输入输出feature是需要根据输入输出计算的，这里最初输入图片式28*28
+        self.fc1 = nn.Linear(in_features=5 * 5 * 16, out_features=120)
         self.fc2 = nn.Linear(in_features=120, out_features=84)
         self.fc3 = nn.Linear(in_features=84, out_features=10)
 
@@ -126,8 +125,10 @@ if __name__ == "__main__":
     loss = torch.nn.CrossEntropyLoss()
     lr = 0.01
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
-    num_epochs = 100
+    num_epochs = 80
 
     # Step 4: Training
     train(model, train_iter, test_iter, batch_size, loss, optimizer, device, num_epochs)
 
+    # Step 5: Save Model and show
+    save_model(model)

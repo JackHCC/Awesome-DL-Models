@@ -39,12 +39,11 @@
 
 - [LeNet](./Models/Conv/LeNet.py): Including Basic Tutorial
 - [AlexNet](./Models/Conv/AlexNet.py)
-- VGGNet
-- Inception Series v1-v4
-- ResNet Series
-- SENet
-- DenseNet
-
+- [VGGNet](./Models/Conv/VGGNet.py)
+- [NiN](./Models/Conv/NiN.py)
+- [GoogleNet](./Models/Conv/GoogleNet.py)
+- [ResNet](./Models/Conv/ResNet.py)
+- [DenseNet](./Models/Conv/DenseNet.py)
 
 
 ### Object Detection

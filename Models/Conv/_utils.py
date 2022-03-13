@@ -84,3 +84,8 @@ def train(net, train_iter, test_iter, batch_size, loss, optimizer, device, num_e
         # Step 10. 打印单词epoch输出的信息
         print('epoch %d, loss %.4f, train acc %.3f, test acc %.3f, time %.1f sec'
               % (epoch + 1, train_ls_sum / batch_count, train_acc_sum / n, test_acc, time.time() - start))
+
+
+def save_model(net):
+    if isinstance(net, torch.nn.Module):
+        torch.save(net.state_dict(), './model/model.params')

@@ -12,5 +12,6 @@ Docx/CS224N/Assignment/A4/vocab.json
 Docx/CS224N/Assignment/A4/model.bin
 Docx/CS224N/Assignment/A4/model.bin.optim
 Models/Conv/Datasets/
+Models/Conv/model/
 Models/Word-Embedding/Word2Vec/data/
 Models/Word-Embedding/Word2Vec/dict/
