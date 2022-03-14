@@ -62,6 +62,7 @@ d_k = d_v = 64  # K(=Q), V的维度
 n_layers = 6    # 有多少个encoder和decoder
 n_heads = 8     # Multi-Head Attention设置为8  d_k * n_heads = d_model
 
+
 # Positional Embedding
 class PositionalEncoding(nn.Module):
     def __init__(self, d_model, dropout=0.1, max_len=5000):
@@ -139,6 +140,7 @@ class MultiHeadAttention(nn.Module):
         output = self.fc(context)  # [batch_size, len_q, d_model]
         return nn.LayerNorm(d_model).cuda()(output + residual), attn    # ADD And Layer Norm
 
+
 # 前馈神经网络
 class PoswiseFeedForwardNet(nn.Module):
     def __init__(self):
@@ -153,6 +155,7 @@ class PoswiseFeedForwardNet(nn.Module):
         output = self.fc(inputs)
         return nn.LayerNorm(d_model).cuda()(output + residual)  # [batch_size, seq_len, d_model]
 
+
 # 单个Encoder
 class EncoderLayer(nn.Module):
     def __init__(self):
@@ -166,6 +169,7 @@ class EncoderLayer(nn.Module):
                                                enc_self_attn_mask)                    # attn: [batch_size, n_heads, src_len, src_len]
         enc_outputs = self.pos_ffn(enc_outputs)                                       # enc_outputs: [batch_size, src_len, d_model]
         return enc_outputs, attn
+
 
 # 整个Encoder
 class Encoder(nn.Module):
@@ -187,6 +191,7 @@ class Encoder(nn.Module):
             enc_self_attns.append(enc_self_attn)
         return enc_outputs, enc_self_attns
 
+
 # 单个decoder
 class DecoderLayer(nn.Module):
     def __init__(self):
@@ -207,6 +212,7 @@ class DecoderLayer(nn.Module):
                                                                                    # dec_enc_attn: [batch_size, h_heads, tgt_len, src_len]
         dec_outputs = self.pos_ffn(dec_outputs)                                    # dec_outputs: [batch_size, tgt_len, d_model]
         return dec_outputs, dec_self_attn, dec_enc_attn
+
 
 # 整个Decoder
 class Decoder(nn.Module):
@@ -238,6 +244,7 @@ class Decoder(nn.Module):
             dec_enc_attns.append(dec_enc_attn)
         return dec_outputs, dec_self_attns, dec_enc_attns
 
+
 # Trasformer
 class Transformer(nn.Module):
     def __init__(self):
@@ -245,6 +252,7 @@ class Transformer(nn.Module):
         self.Encoder = Encoder().cuda()
         self.Decoder = Decoder().cuda()
         self.projection = nn.Linear(d_model, tgt_vocab_size, bias=False).cuda()
+
     def forward(self, enc_inputs, dec_inputs):                         # enc_inputs: [batch_size, src_len]
                                                                        # dec_inputs: [batch_size, tgt_len]
         enc_outputs, enc_self_attns = self.Encoder(enc_inputs)         # enc_outputs: [batch_size, src_len, d_model],
@@ -255,6 +263,7 @@ class Transformer(nn.Module):
                                                                        # dec_enc_attn  : [n_layers, batch_size, tgt_len, src_len]
         dec_logits = self.projection(dec_outputs)                      # dec_logits: [batch_size, tgt_len, tgt_vocab_size]
         return dec_logits.view(-1, dec_logits.size(-1)), enc_self_attns, dec_self_attns, dec_enc_attns
+
 
 # 定义网络
 model = Transformer().cuda()
@@ -276,6 +285,7 @@ for epoch in range(50):
         loss.backward()
         optimizer.step()
 
+
 # 测试模型
 def test(model, enc_input, start_symbol):
     enc_outputs, enc_self_attns = model.Encoder(enc_input)
@@ -289,6 +299,7 @@ def test(model, enc_input, start_symbol):
         next_word = prob.data[i]
         next_symbol = next_word.item()
     return dec_input
+
 
 enc_inputs, _, _ = next(iter(loader))
 predict_dec_input = test(model, enc_inputs[0].view(1, -1).cuda(), start_symbol=tgt_vocab["S"])
