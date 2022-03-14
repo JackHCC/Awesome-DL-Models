@@ -15,15 +15,15 @@ from torch import nn
 class Inception(nn.Module):
     def __init__(self, in_channel, c1_channel, c2_channel, c3_channel, c4_channel):
         super(Inception, self).__init__()
-        # Path1: 1 * 1 Conv
+        # Path1: 1 * 1 CNN
         self.path1 = nn.Conv2d(in_channels=in_channel, out_channels=c1_channel, kernel_size=1)
-        # Path2: 1 * 1 Conv + 3 * 3 Conv
+        # Path2: 1 * 1 CNN + 3 * 3 CNN
         self.path2_1 = nn.Conv2d(in_channels=in_channel, out_channels=c2_channel[0], kernel_size=1)
         self.path2_2 = nn.Conv2d(in_channels=c2_channel[0], out_channels=c2_channel[1], kernel_size=3, padding=1)
-        # Path3: 1 * 1 Conv + 5 * 5 Conv
+        # Path3: 1 * 1 CNN + 5 * 5 CNN
         self.path3_1 = nn.Conv2d(in_channels=in_channel, out_channels=c3_channel[0], kernel_size=1)
         self.path3_2 = nn.Conv2d(in_channels=c3_channel[0], out_channels=c3_channel[1], kernel_size=5, padding=2)
-        # Path4: 3 * 3 MaxPool + 1 * 1 Conv
+        # Path4: 3 * 3 MaxPool + 1 * 1 CNN
         self.path4_1 = nn.MaxPool2d(kernel_size=3, stride=1, padding=1)
         self.path4_2 = nn.Conv2d(in_channels=in_channel, out_channels=c4_channel, kernel_size=1)
         self.relu = nn.ReLU()

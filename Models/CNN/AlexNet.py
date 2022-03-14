@@ -12,7 +12,7 @@ import torch
 import torch.nn as nn
 
 """
-Conv:
+CNN:
     out_size = floor((input_size  + padding * 2 - kernel_size) / stride + 1)
 Pool:
     out_size = floor((input_size + padding * 2 - kernel_size) / stride + 1)

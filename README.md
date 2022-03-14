@@ -37,13 +37,13 @@
 
 ### Classification
 
-- [LeNet](./Models/Conv/LeNet.py): Including Basic Tutorial
-- [AlexNet](./Models/Conv/AlexNet.py)
-- [VGGNet](./Models/Conv/VGGNet.py)
-- [NiN](./Models/Conv/NiN.py)
-- [GoogleNet](./Models/Conv/GoogleNet.py)
-- [ResNet](./Models/Conv/ResNet.py)
-- [DenseNet](./Models/Conv/DenseNet.py)
+- [LeNet](Models/CNN/LeNet.py): Including Basic Tutorial
+- [AlexNet](Models/CNN/AlexNet.py)
+- [VGGNet](Models/CNN/VGGNet.py)
+- [NiN](Models/CNN/NiN.py)
+- [GoogleNet](Models/CNN/GoogleNet.py)
+- [ResNet](Models/CNN/ResNet.py)
+- [DenseNet](Models/CNN/DenseNet.py)
 
 
 ### Object Detection
@@ -54,7 +54,6 @@
 - YOLO Series
 - SSD
 - FPN
-
 
 
 ### Semantic Segmentation
@@ -79,6 +78,14 @@
 - [Gensim](https://radimrehurek.com/gensim/intro.html)
 - [SentencePiece](https://github.com/google/sentencepiece)
 - [sacreBLEU](https://github.com/mjpost/sacreBLEU)
+
+### Recurrent Neural Network
+- [RNN](./Models/RNN/RNN.py)
+- [GRU](./Models/RNN/GRU.py)
+- [LSTM](./Models/RNN/LSTM.py)
+- [Bi-RNN](./Models/RNN/BiRNN.py)
+- [Encoder-Decoder](./Models/RNN/Encoder_Decoder.py)
+- [Seq2Seq](./Models/RNN/Seq2Seq.py)
 
 ### Embedding
 
